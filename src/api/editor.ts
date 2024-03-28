@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getConsole = async (fileName: string | undefined, taskArn: string, containerName: string) => {
     try {
-        const result = await axios.post('https://eb6d-112-218-243-204.ngrok-free.app/api/containers/exec-code', {
+        const result = await axios.post('https://2716-112-218-243-204.ngrok-free.app/api/containers/exec-code', {
             fileName,
             taskArn,
             containerName,
@@ -15,7 +15,7 @@ export const getConsole = async (fileName: string | undefined, taskArn: string, 
 
 export const commandTest = async (username: string, command: string, taskArn: string, containerName: string) => {
     try {
-        const result = await axios.post('https://eb6d-112-218-243-204.ngrok-free.app/api/containers/exec', {
+        const result = await axios.post('https://2716-112-218-243-204.ngrok-free.app/api/containers/exec', {
             username,
             command,
             taskArn,
@@ -29,7 +29,7 @@ export const commandTest = async (username: string, command: string, taskArn: st
 
 export const treeCommand = async (username: string, command: string, taskArn: string, containerName: string) => {
     try {
-        const result = await axios.post('https://eb6d-112-218-243-204.ngrok-free.app/api/containers/exec2', {
+        const result = await axios.post('https://2716-112-218-243-204.ngrok-free.app/api/containers/exec2', {
             username,
             command,
             taskArn,
@@ -43,7 +43,7 @@ export const treeCommand = async (username: string, command: string, taskArn: st
 
 export const createCommand = async (username: string, command: string | undefined, taskArn: string, containerName: string, path: string | undefined) => {
     try {
-        const result = await axios.post('https://eb6d-112-218-243-204.ngrok-free.app/api/containers/exec3', {
+        const result = await axios.post('https://2716-112-218-243-204.ngrok-free.app/api/containers/exec3', {
             username,
             command,
             taskArn,
@@ -58,7 +58,7 @@ export const createCommand = async (username: string, command: string | undefine
 
 export const getContainerData = async () => {
     try {
-        const result = await axios.get('https://eb6d-112-218-243-204.ngrok-free.app/api/containers/tes-zxcTesService/tasks');
+        const result = await axios.get('https://2716-112-218-243-204.ngrok-free.app/api/containers/tes-zxcTesService/tasks');
         return result.data;
     }catch (err) {
         return console.error(err);

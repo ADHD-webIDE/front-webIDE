@@ -219,13 +219,14 @@ export default function Editor() {
   
   const socket = () => {
     getTaskArn();
-    const socket = new SockJS('https://eb6d-112-218-243-204.ngrok-free.app/websocket');
+    const socket = new SockJS('https://2716-112-218-243-204.ngrok-free.app/websocket');
     const client = Stomp.over(socket);
       client.connect({}, () => {
         console.log('Connected to WebSocket');
         client.subscribe('/topic/commandOutput', (message) => {
           const newData = JSON.parse(message.body);
           const content = newData.content;
+          console.log(content);
           setTerminalOutput([...terminalOutput,{type: 'command', value: content}]);
         })
       });
