@@ -98,13 +98,12 @@ export default function Chat() {
     setMessage("");
   };
   const onClick = async () => {
-    const result = await createRoom(roomName, userid);
+    const result = await createRoom(roomName);
     console.log(result);
     setShowCreateRoom(false);
     const resultJoin = await joinRoomByName(roomName, userid);
     console.log(resultJoin.roomId);
     setRoomId(resultJoin.roomId);
-    // joinRoom();
     const username = user.map((data: any) => data.username).join("");
     setUserid(username);
     const resultRooms = await userRooms(userid);
